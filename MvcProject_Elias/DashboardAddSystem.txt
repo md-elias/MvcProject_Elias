@@ -1,0 +1,2 @@
+﻿Templete=>example=>dashboard.html=>open=>copy all code
+=>view=>shared>add view=>name=_masterLayout=>use layoout uncheck

@@ -1,0 +1,67 @@
+﻿@model IEnumerable<MvcProject_Elias.Models.Traine>
+
+@{
+    //ViewBag.Title = "Index";
+    ViewBag.Title = "ManageUserRoles";
+    Layout = "~/Views/Shared/_masterLayout.cshtml";
+}
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CoreSubject)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Round)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.TSP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfBirth)
+            </th>*@
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CoreSubject)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Round)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.TSP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfBirth)
+                </td>*@
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.TraineId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.TraineId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.TraineId })
+            </td>
+        </tr>
+    }
+
+</table>
